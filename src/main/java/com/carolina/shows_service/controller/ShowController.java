@@ -1,7 +1,7 @@
 package com.carolina.shows_service.controller;
 
 import com.carolina.shows_service.model.Show;
-import com.carolina.shows_service.service.ShowServiceImpl;
+import com.carolina.shows_service.service.ShowService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,10 +13,10 @@ import java.util.List;
 @RequestMapping("/api/v1/shows")
 public class ShowController {
 
-    private final ShowServiceImpl showService;
+    private final ShowService showService;
 
     @Autowired
-    public ShowController(ShowServiceImpl showService) {
+    public ShowController(ShowService showService) {
         this.showService = showService;
     }
 
