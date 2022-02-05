@@ -44,7 +44,7 @@ class ShowControllerTest {
 
     @BeforeEach
     void setUp() {
-        this.apiUrl = this.baseUrl + this.port;
+        this.apiUrl = this.baseUrl + this.port + "/api/v1/shows";
         this.mockShow1 = new Show(1L, "Dancing Queen", LocalDateTime.now(), LocalDateTime.now());
         this.mockShow2 = new Show(2L, "Beauty and the beast", LocalDateTime.now(), LocalDateTime.now());
     }
@@ -73,6 +73,7 @@ class ShowControllerTest {
         // Given
         Long showId = this.mockShow2.getId();
         String url = this.apiUrl + '/' + showId;
+        System.out.println(url);
         String expectedShowName = this.mockShow1.getName();
 
         when(showService.getShow(showId)).thenReturn(this.mockShow1);
